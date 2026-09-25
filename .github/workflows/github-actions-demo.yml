@@ -61,8 +61,8 @@ jobs:
             cd ~/sample-server
             npm ci --omit=dev
 
-            if pm2 describe ci-test >/dev/null 2>&1; then
-              pm2 restart ci-test
+            if pm2 describe sample-server >/dev/null 2>&1; then
+              pm2 restart sample-server
             else
               pm2 start dist/main.js --name "sample-server"
             fi
